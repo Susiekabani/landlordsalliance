@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsorship Opportunities — The Landlords Alliance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:       #0D1F3C;
+    --navy-mid:   #152B50;
+    --navy-lite:  #1C3666;
+    --gold:       #C9A84C;
+    --gold-lite:  #E2C476;
+    --gold-pale:  #F5EDD6;
+    --gold-faint: #FAF5E8;
+    --cream:      #F9F6F0;
+    --offwhite:   #EDE8DF;
+    --charcoal:   #1C1C1C;
+    --mid:        #666;
+    --light:      #999;
+    --white:      #fff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── TYPOGRAPHY ─────────────────────────────────────────────── */
+  .serif { font-family: 'Cormorant Garamond', serif; }
+
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+
+  /* ── ANIMATIONS ──────────────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes lineGrow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── NAV ─────────────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,31,60,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 0 40px;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.03em;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--offwhite);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: var(--gold-lite) !important; color: var(--navy) !important; }
+
+  /* ── HERO ─────────────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px 80px;
+  }
+
+  /* Diagonal texture */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 50%),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(201,168,76,0.02) 40px,
+        rgba(201,168,76,0.02) 41px
+      );
+    pointer-events: none;
+  }
+
+  /* Gold top rule */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+
+  .hero-overline {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    animation: fadeIn 1s ease both;
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 32px;
+    transform-origin: left;
+    animation: lineGrow 0.8s ease 0.3s both;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 8vw, 90px);
+    font-weight: 300;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 300;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--offwhite);
+    text-align: center;
+    margin-top: 28px;
+    max-width: 560px;
+    line-height: 1.7;
+    animation: fadeUp 0.9s ease 0.4s both;
+  }
+
+  /* Stats row */
+  .hero-stats {
+    display: flex;
+    gap: 0;
+    margin-top: 56px;
+    border: 1px solid rgba(201,168,76,0.2);
+    animation: fadeUp 0.9s ease 0.6s both;
+  }
+  .hero-stat {
+    padding: 24px 48px;
+    text-align: center;
+    position: relative;
+  }
+  .hero-stat + .hero-stat::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 16px; bottom: 16px;
+    width: 1px;
+    background: rgba(201,168,76,0.2);
+  }
+  .hero-stat.highlight {
+    background: var(--gold);
+  }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+  .hero-stat.highlight .hero-stat-num { color: var(--navy); }
+  .hero-stat-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light);
+    display: block;
+    margin-top: 6px;
+  }
+  .hero-stat.highlight .hero-stat-label { color: var(--navy-mid); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--light);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s ease 1s both;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: fadeUp 1s ease 1.2s infinite alternate;
+  }
+
+  /* ── SECTION WRAPPER ─────────────────────────────────────────── */
+  section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  .section-body {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.75;
+    max-width: 620px;
+  }
+
+  /* ── INTRO SECTION ───────────────────────────────────────────── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 60px;
+  }
+  .intro-col h3 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+  .intro-col p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--mid);
+    font-weight: 300;
+  }
+
+  .ideal-strip {
+    background: var(--navy);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .ideal-strip-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .ideal-strip-rule {
+    width: 1px;
+    height: 24px;
+    background: rgba(201,168,76,0.3);
+    flex-shrink: 0;
+  }
+  .ideal-strip-items {
+    font-size: 13px;
+    color: var(--offwhite);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── FULL-WIDTH SECTIONS ─────────────────────────────────────── */
+  .full-width { max-width: none; padding-left: 0; padding-right: 0; }
+
+  /* ── EXCLUSIVE CARD ──────────────────────────────────────────── */
+  .excl-section {
+    background: var(--navy);
+    padding: 0;
+  }
+  .excl-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+  .excl-card {
+    background: #07111F;
+    border: 1px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  .excl-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: var(--gold);
+  }
+
+  /* Diagonal glow */
+  .excl-card::after {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .excl-header {
+    background: var(--navy-mid);
+    padding: 32px 48px 32px 52px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .excl-header-left h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+  }
+  .excl-header-left p {
+    font-size: 13px;
+    color: var(--gold-lite);
+    margin-top: 6px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+  }
+  .excl-pills {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .excl-pill {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+  }
+  .excl-price {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .excl-price-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .excl-price-label {
+    font-size: 12px;
+    color: var(--light);
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .excl-body {
+    padding: 40px 52px;
+  }
+  .excl-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--offwhite);
+    font-weight: 300;
+    max-width: 760px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 36px;
+  }
+  .excl-benefits-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .excl-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .excl-benefit {
+    padding: 18px 24px 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .excl-benefit:nth-child(even) {
+    padding-left: 32px;
+    border-left: 1px solid rgba(255,255,255,0.05);
+  }
+  .excl-benefit-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .excl-benefit-desc {
+    font-size: 12px;
+    color: var(--light);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── THREE TIER CARDS ────────────────────────────────────────── */
+  .packages-section {
+    background: var(--cream);
+  }
+  .packages-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+    background: var(--offwhite);
+  }
+
+  .tier-card {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .tier-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(13,31,60,0.12);
+    z-index: 2;
+  }
+  .tier-card.featured {
+    background: var(--navy);
+  }
+
+  .tier-accent {
+    height: 4px;
+    background: var(--gold);
+  }
+  .tier-card.gold-tier .tier-accent { background: #C9A84C; }
+  .tier-card.silver-tier .tier-accent { background: #8FA3B1; }
+
+  .tier-header {
+    background: var(--navy);
+    padding: 32px 28px 28px;
+    text-align: center;
+  }
+  .tier-card.featured .tier-header { background: var(--navy-lite); }
+
+  .tier-name {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .tier-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .tier-card.gold-tier .tier-price { color: var(--gold); }
+  .tier-card.silver-tier .tier-price { color: #8FA3B1; }
+  .tier-period {
+    font-size: 11px;
+    color: var(--light);
+    margin-top: 6px;
+  }
+
+  .tier-body {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .tier-benefit {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gold-faint);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .tier-benefit:last-child { border-bottom: none; }
+  .tier-benefit-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .tier-card.featured .tier-benefit-name { color: var(--gold); }
+  .tier-card.featured .tier-body { background: var(--navy); }
+  .tier-card.featured .tier-benefit { border-bottom-color: rgba(255,255,255,0.06); }
+
+  .tier-benefit-desc {
+    font-size: 11px;
+    color: var(--mid);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .tier-card.featured .tier-benefit-desc { color: var(--light); }
+
+  .tier-cta {
+    margin: 20px 28px 28px;
+    display: block;
+    text-align: center;
+    padding: 13px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    transition: all 0.25s;
+  }
+  .tier-cta:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  .tier-card.featured .tier-cta {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+  .tier-card.featured .tier-cta:hover {
+    background: var(--gold-lite);
+  }
+
+  /* ── COMPARISON TABLE ────────────────────────────────────────── */
+  .comparison-section {
+    background: var(--white);
+    padding: 100px 40px;
+  }
+  .comparison-inner { max-width: 1100px; margin: 0 auto; }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 48px;
+    font-size: 13px;
+  }
+  .comparison-table th {
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--navy);
+    color: var(--white);
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .comparison-table th:first-child {
+    text-align: left;
+    color: var(--gold);
+  }
+  .comparison-table th.excl-col { color: var(--gold); background: #07111F; }
+  .comparison-table th.plat-col { background: var(--navy); }
+  .comparison-table th.gold-col { background: #3D2E06; }
+  .comparison-table th.silv-col { background: #2A3740; }
+
+  .comparison-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--gold-faint);
+    border-right: 1px solid var(--gold-faint);
+    text-align: center;
+    color: var(--mid);
+    font-weight: 300;
+  }
+  .comparison-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: var(--navy);
+    font-size: 13px;
+  }
+  .comparison-table tr:nth-child(even) td { background: var(--gold-faint); }
+  .comparison-table .check { color: var(--gold); font-size: 16px; }
+  .comparison-table .partial { color: var(--mid); font-size: 11px; }
+  .comparison-table .cross { color: #CBD5E0; font-size: 14px; }
+  .comparison-table .excl-val { color: var(--gold); font-weight: 600; font-size: 11px; }
+
+  /* Price row */
+  .comparison-table .price-row td {
+    background: var(--navy) !important;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 20px;
+  }
+  .comparison-table .price-row td:first-child {
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── MARKET STATS ────────────────────────────────────────────── */
+  .market-section {
+    background: var(--navy);
+    padding: 0;
+  }
+  .market-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+  .market-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.15);
+    margin-top: 48px;
+  }
+  .market-stat {
+    background: var(--navy);
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .market-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+  .market-stat-label {
+    font-size: 11px;
+    color: var(--light);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .market-source {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    margin-top: 16px;
+    text-align: right;
+  }
+
+  .sweet-spot {
+    background: rgba(201,168,76,0.06);
+    border-left: 4px solid var(--gold);
+    padding: 28px 32px;
+    margin-top: 48px;
+  }
+  .sweet-spot h3 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .sweet-spot p {
+    font-size: 14px;
+    color: var(--offwhite);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .spend-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 48px;
+    font-size: 13px;
+  }
+  .spend-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .spend-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--offwhite);
+    font-weight: 300;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .spend-table td:first-child {
+    font-weight: 500;
+    color: var(--gold-lite);
+    white-space: nowrap;
+  }
+  .spend-table td:nth-child(2) {
+    color: var(--light);
+    font-size: 12px;
+  }
+  .spend-table tr:nth-child(even) td {
+    background: rgba(255,255,255,0.02);
+  }
+
+  /* ── CTA SECTION ─────────────────────────────────────────────── */
+  .cta-section {
+    background: var(--gold);
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .cta-section p {
+    font-size: 16px;
+    color: var(--navy-mid);
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 48px;
+    transition: all 0.25s;
+  }
+  .cta-btn:hover {
+    background: var(--navy-mid);
+    transform: translateY(-2px);
+  }
+  .cta-note {
+    font-size: 12px;
+    color: rgba(13,31,60,0.5);
+    margin-top: 20px;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    border-top: 3px solid var(--gold);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .footer-brand span { color: var(--gold); }
+  footer p {
+    font-size: 12px;
+    color: var(--light);
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 60px 20px; }
+    .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-stats { flex-direction: column; }
+    .hero-stat + .hero-stat::before { display: none; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .excl-header { flex-direction: column; align-items: flex-start; }
+    .excl-price { text-align: left; }
+    .excl-benefits { grid-template-columns: 1fr; }
+    .excl-benefit:nth-child(even) { padding-left: 0; border-left: none; }
+    .market-stats-grid { grid-template-columns: 1fr 1fr; }
+    .comparison-section { padding: 60px 20px; }
+    .comparison-table { font-size: 11px; }
+    .comparison-table td, .comparison-table th { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">The Landlords <span>Alliance</span></div>
+  <ul class="nav-links">
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#comparison">Compare</a></li>
+    <li><a href="#market">The Market</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-overline">Community Sponsorship Opportunities</p>
+  <div class="hero-rule"></div>
+  <h1>The Landlords<br><em>Alliance</em></h1>
+  <p class="hero-sub">A professionally run private community of residential landlords within the Ismaili network — 350+ verified members, no competing advertisers.</p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">204</span>
+      <span class="hero-stat-label">WhatsApp Members</span>
+    </div>
+    <div class="hero-stat highlight">
+      <span class="hero-stat-num">350+</span>
+      <span class="hero-stat-label">Verified Members</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">350</span>
+      <span class="hero-stat-label">Email Subscribers</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Explore
+  </div>
+</div>
+
+<!-- INTRO -->
+<section>
+  <div class="section-label">About</div>
+  <h2 class="section-title">Reach <em>verified</em> landlords.<br>No noise. No competition.</h2>
+  <p class="section-body">LLA members are active property investors with genuine buying intent. As sponsorship is the only commercial relationship members encounter, your brand carries the weight of a community endorsement — something no digital ad can replicate.</p>
+
+  <div class="intro-grid reveal">
+    <div class="intro-col">
+      <h3>Who We Are</h3>
+      <p>The Landlords Alliance is a professionally run community for private residential landlords within the Ismaili network. We educate, connect and support our members through expert events, curated resources and a dedicated digital platform launching in 2026. Recent event partners include KPMG, Premierline Insurance and specialist solicitors.</p>
+    </div>
+    <div class="intro-col">
+      <h3>Why Sponsor?</h3>
+      <p>Membership is entirely free — meaning sponsors are the only commercial relationship members encounter. No competing advertisers. No noise. Just your brand, exclusively, in front of a high-intent audience that trusts the community that introduced you. Every sponsor is listed in our Partner Directory and monthly member newsletter.</p>
+    </div>
+  </div>
+
+  <div class="ideal-strip reveal">
+    <span class="ideal-strip-label">Ideal Sponsors</span>
+    <div class="ideal-strip-rule"></div>
+    <span class="ideal-strip-items">BTL Mortgage Brokers &nbsp;·&nbsp; Landlord Insurers &nbsp;·&nbsp; Legal Specialists &nbsp;·&nbsp; Letting Agents &nbsp;·&nbsp; Maintenance Firms &nbsp;·&nbsp; Accountants</span>
+  </div>
+</section>
+
+<!-- EXCLUSIVE PARTNER -->
+<div class="excl-section full-width" id="packages">
+  <div class="excl-inner">
+    <div class="section-label" style="color:var(--gold-lite)">Exclusive Partnership</div>
+    <h2 class="section-title" style="color:var(--white)">The <em>only</em> partner<br>in your category.</h2>
+    <p class="section-body" style="color:var(--offwhite); margin-bottom: 40px;">One slot available per category. When members ask for legal or financial guidance, your firm is who we send them to.</p>
+
+    <div class="excl-card reveal">
+      <div class="excl-header">
+        <div class="excl-header-left">
+          <h2>Exclusive Partner</h2>
+          <p>One slot per category &nbsp;·&nbsp; Limited availability</p>
+          <div class="excl-pills">
+            <span class="excl-pill">Legal</span>
+            <span class="excl-pill">Financial Advisory</span>
+          </div>
+        </div>
+        <div class="excl-price">
+          <div class="excl-price-num">£5,000</div>
+          <div class="excl-price-label">per year</div>
+        </div>
+      </div>
+
+      <div class="excl-body">
+        <p class="excl-intro">
+          This is not advertising — it is an exclusive, trusted referral relationship with a community of 350+ verified landlords. When members need legal advice or financial guidance, your firm is the one we name. Become the LLA's only recommended partner in your category.
+        </p>
+        <div class="excl-benefits-label">What's Included</div>
+        <div class="excl-benefits">
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">Exclusive Referral Status</div>
+            <div class="excl-benefit-desc">All member queries in your category directed to you — by name — by the LLA team</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">Table at Every LLA Event</div>
+            <div class="excl-benefit-desc">Your own table presence at every in-person networking event we run</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">Quarterly Webinar Speaking Slot</div>
+            <div class="excl-benefit-desc">Your own expert Q&A session in front of the full community, four times a year</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">Partner Directory Listing</div>
+            <div class="excl-benefit-desc">Featured listing in the LLA Partner Directory on the platform</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">WhatsApp Group Access</div>
+            <div class="excl-benefit-desc">Tagged directly in live member conversations — a warm referral in real time</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">Named on All LLA Materials</div>
+            <div class="excl-benefit-desc">Exclusive Partner credit on every outbound communication and event material</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">2 Dedicated Email Campaigns</div>
+            <div class="excl-benefit-desc">Your own send to the full membership — twice a year, exclusive to you</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">Founding Partner Status</div>
+            <div class="excl-benefit-desc">Protected designation if you are first in your category — for life</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">Co-Branded Content Series</div>
+            <div class="excl-benefit-desc">Your own named column — 'Legal Corner' or 'Finance Update' — in the platform feed</div>
+          </div>
+          <div class="excl-benefit">
+            <div class="excl-benefit-title">First Right of Renewal</div>
+            <div class="excl-benefit-desc">First right of refusal before your category is offered to any competitor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THREE TIER PACKAGES -->
+<div class="packages-section full-width">
+  <div class="packages-inner">
+    <div class="section-label">Sponsorship Packages</div>
+    <h2 class="section-title">Choose your <em>level</em><br>of presence.</h2>
+    <p class="section-body">All sponsors are listed in the LLA Partner Directory and featured in the monthly member newsletter. Packages build from there.</p>
+
+    <div class="packages-grid reveal">
+
+      <!-- PLATINUM -->
+      <div class="tier-card featured">
+        <div class="tier-accent"></div>
+        <div class="tier-header">
+          <div class="tier-name">Platinum</div>
+          <div class="tier-price">£150</div>
+          <div class="tier-period">per month</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Partner Directory</div>
+            <div class="tier-benefit-desc">Listed in the LLA Partner Directory on the platform</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Monthly Platform Post</div>
+            <div class="tier-benefit-desc">Sponsored post in the community feed every month</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">WhatsApp Access</div>
+            <div class="tier-benefit-desc">Tagged in relevant live member conversations</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Event Table</div>
+            <div class="tier-benefit-desc">Your own table at every LLA in-person networking event</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Monthly Newsletter</div>
+            <div class="tier-benefit-desc">Listed as a supplier in the monthly member newsletter</div>
+          </div>
+        </div>
+        <a href="mailto:info@thelandlordsalliance.com?subject=Platinum Sponsorship Enquiry" class="tier-cta">Enquire Now</a>
+      </div>
+
+      <!-- GOLD -->
+      <div class="tier-card gold-tier">
+        <div class="tier-accent"></div>
+        <div class="tier-header" style="background:#5C4A0A">
+          <div class="tier-name">Gold</div>
+          <div class="tier-price" style="color:var(--gold)">£100</div>
+          <div class="tier-period">per month</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Partner Directory</div>
+            <div class="tier-benefit-desc">Listed in the LLA Partner Directory on the platform</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Quarterly Platform Post</div>
+            <div class="tier-benefit-desc">Sponsored post in the community feed each quarter</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Event Presence</div>
+            <div class="tier-benefit-desc">Logo and materials at the LLA event registration table</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Monthly Newsletter</div>
+            <div class="tier-benefit-desc">Listed as a supplier in the monthly member newsletter</div>
+          </div>
+        </div>
+        <a href="mailto:info@thelandlordsalliance.com?subject=Gold Sponsorship Enquiry" class="tier-cta">Enquire Now</a>
+      </div>
+
+      <!-- SILVER -->
+      <div class="tier-card silver-tier">
+        <div class="tier-accent" style="background:#8FA3B1"></div>
+        <div class="tier-header" style="background:#37454F">
+          <div class="tier-name">Silver</div>
+          <div class="tier-price" style="color:#8FA3B1">£50</div>
+          <div class="tier-period">per month</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Partner Directory</div>
+            <div class="tier-benefit-desc">Listed in the LLA Partner Directory on the platform</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Event Presence</div>
+            <div class="tier-benefit-desc">Logo and materials at the LLA event registration table</div>
+          </div>
+          <div class="tier-benefit">
+            <div class="tier-benefit-name">Monthly Newsletter</div>
+            <div class="tier-benefit-desc">Listed as a supplier in the monthly member newsletter</div>
+          </div>
+        </div>
+        <a href="mailto:info@thelandlordsalliance.com?subject=Silver Sponsorship Enquiry" class="tier-cta">Enquire Now</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="comparison-section full-width" id="comparison">
+  <div class="comparison-inner">
+    <div class="section-label">Full Comparison</div>
+    <h2 class="section-title">Everything <em>side by side.</em></h2>
+
+    <table class="comparison-table reveal">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="excl-col">Exclusive<br>£5,000/yr</th>
+          <th class="plat-col">Platinum<br>£150/mo</th>
+          <th class="gold-col">Gold<br>£100/mo</th>
+          <th class="silv-col">Silver<br>£50/mo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Partner Directory listing</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+        </tr>
+        <tr>
+          <td>Monthly member newsletter (listed as supplier)</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+        </tr>
+        <tr>
+          <td>Event presence — logo &amp; materials at registration</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+        </tr>
+        <tr>
+          <td>Sponsored platform post</td>
+          <td><span class="excl-val">Monthly</span></td>
+          <td><span class="partial">Monthly</span></td>
+          <td><span class="partial">Quarterly</span></td>
+          <td><span class="cross">—</span></td>
+        </tr>
+        <tr>
+          <td>Event table (own presence)</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+        </tr>
+        <tr>
+          <td>WhatsApp group access</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="check">✦</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+        </tr>
+        <tr>
+          <td>Dedicated email to full membership</td>
+          <td><span class="excl-val">2× per year</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+        </tr>
+        <tr>
+          <td>Quarterly webinar speaking slot</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+        </tr>
+        <tr>
+          <td>Co-branded content series</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+        </tr>
+        <tr>
+          <td>Exclusive referral status</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+        </tr>
+        <tr>
+          <td>Founding Partner status</td>
+          <td><span class="check">✦</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- MARKET SECTION -->
+<div class="market-section full-width" id="market">
+  <div class="market-inner">
+    <div class="section-label" style="color:var(--gold-lite)">The Market Case</div>
+    <h2 class="section-title" style="color:var(--white)">A <em>motivated</em> market.<br>Right now.</h2>
+    <p class="section-body" style="color:var(--offwhite)">The Renters' Rights Act 2025 is the most significant change to the private rented sector in 40 years. Landlords are urgently seeking legal, financial and insurance guidance — and LLA sits at the heart of that conversation.</p>
+
+    <div class="market-stats-grid reveal">
+      <div class="market-stat">
+        <span class="market-stat-num">2.86m</span>
+        <div class="market-stat-label">Private landlords<br>in the UK</div>
+      </div>
+      <div class="market-stat">
+        <span class="market-stat-num">£450k</span>
+        <div class="market-stat-label">Median portfolio<br>value per landlord</div>
+      </div>
+      <div class="market-stat">
+        <span class="market-stat-num">£52k</span>
+        <div class="market-stat-label">Median gross<br>income</div>
+      </div>
+      <div class="market-stat">
+        <span class="market-stat-num">1 in 5</span>
+        <div class="market-stat-label">UK households<br>renting privately</div>
+      </div>
+    </div>
+    <p class="market-source">English Private Landlord Survey 2024 · HMRC 2023-24</p>
+
+    <div class="sweet-spot reveal">
+      <h3>Why 1–5 Property Landlords Are Your Best Audience</h3>
+      <p>43% of UK landlords own a single property. 39% own 2–4. LLA members mirror this exactly. Unlike large portfolio operators with corporate accounts and institutional relationships, these landlords actively shop the market — for insurance, mortgage brokers, letting agents and tradespeople — every single year. Real decisions. Real spend. Real reach.</p>
+    </div>
+
+    <table class="spend-table reveal">
+      <thead>
+        <tr>
+          <th>Sector</th>
+          <th>UK Market Size</th>
+          <th>Why They Want Your Audience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Landlord Insurance</td>
+          <td>£912m GWP · +7% YoY</td>
+          <td>34% of landlords underinsured. 75% compare quotes at renewal, 53% switch insurer. These landlords shop the open market every year.</td>
+        </tr>
+        <tr>
+          <td>Buy-to-Let Mortgages</td>
+          <td>£20.5bn lent 2024 · +12% YoY</td>
+          <td>Smaller landlords rely on brokers to navigate 200+ lenders. Yields at a 10-year high drive active refinancing — trusted referrals are invaluable.</td>
+        </tr>
+        <tr>
+          <td>Letting &amp; Management</td>
+          <td>£3–5bn/yr · 10–20% of rent</td>
+          <td>1-5 property landlords rarely have in-house management. A community endorsement is one of the most powerful ways an agent wins new instructions.</td>
+        </tr>
+        <tr>
+          <td>Legal Services</td>
+          <td>High repeat demand</td>
+          <td>The Renters' Rights Act 2025 creates urgent demand for legal advice on section 21, tenant disputes and compliance — exactly what these landlords face.</td>
+        </tr>
+        <tr>
+          <td>Property Maintenance</td>
+          <td>Recurring annual spend</td>
+          <td>Maintenance is non-negotiable regardless of portfolio size. Community-vetted tradespeople win loyal, consistent repeat business.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section full-width" id="contact">
+  <h2>Ready to reach<br><em>350+ verified landlords?</em></h2>
+  <p>Get in touch and we'll find the right package for your business. Exclusive Partner slots are limited to one per category.</p>
+  <a href="mailto:info@thelandlordsalliance.com?subject=Sponsorship Enquiry" class="cta-btn">Get in Touch</a>
+  <p class="cta-note">info@thelandlordsalliance.com &nbsp;·&nbsp; thelandlordsalliance.com</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">The Landlords <span>Alliance</span></div>
+  <p>* Annual payment option available — save 2 months &nbsp;·&nbsp; One Exclusive slot per category &nbsp;·&nbsp; All packages subject to availability</p>
+  <p><a href="mailto:info@thelandlordsalliance.com">info@thelandlordsalliance.com</a></p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
