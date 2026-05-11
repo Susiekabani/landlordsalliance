@@ -550,6 +550,20 @@
     color: var(--light);
     margin-top: 6px;
   }
+  .tier-annual {
+    font-size: 11px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    letter-spacing: 0;
+  }
+  .tier-annual .saving {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
 
   .tier-body {
     padding: 28px;
@@ -820,7 +834,7 @@
   .cta-note {
     font-size: 12px;
     color: rgba(13,31,60,0.5);
-    margin-top: 20px;
+    margin-top: 36px;
   }
 
   /* ── FOOTER ──────────────────────────────────────────────────── */
@@ -877,7 +891,8 @@
     <li><a href="#packages">Packages</a></li>
     <li><a href="#comparison">Compare</a></li>
     <li><a href="#market">The Market</a></li>
-    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    <li><a href="#terms">Terms</a></li>
+    <li><a href="#" class="nav-cta" onclick="openModal('General');return false;">Get in Touch</a></li>
   </ul>
 </nav>
 
@@ -889,17 +904,9 @@
   <p class="hero-sub">A professionally run private community of residential landlords within the Ismaili network — 350+ verified members, no competing advertisers.</p>
 
   <div class="hero-stats">
-    <div class="hero-stat">
-      <span class="hero-stat-num">204</span>
-      <span class="hero-stat-label">WhatsApp Members</span>
-    </div>
-    <div class="hero-stat highlight">
-      <span class="hero-stat-num">350+</span>
-      <span class="hero-stat-label">Verified Members</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">350</span>
-      <span class="hero-stat-label">Email Subscribers</span>
+    <div class="hero-stat highlight" style="padding: 28px 80px;">
+      <span class="hero-stat-num" style="font-size:52px;">350+</span>
+      <span class="hero-stat-label" style="font-size:11px; letter-spacing:0.18em;">Verified Members</span>
     </div>
   </div>
 
@@ -929,7 +936,7 @@
   <div class="ideal-strip reveal">
     <span class="ideal-strip-label">Ideal Sponsors</span>
     <div class="ideal-strip-rule"></div>
-    <span class="ideal-strip-items">BTL Mortgage Brokers &nbsp;·&nbsp; Landlord Insurers &nbsp;·&nbsp; Legal Specialists &nbsp;·&nbsp; Letting Agents &nbsp;·&nbsp; Maintenance Firms &nbsp;·&nbsp; Accountants</span>
+    <span class="ideal-strip-items">BTL Mortgage Brokers &nbsp;·&nbsp; Landlord Insurers &nbsp;·&nbsp; Legal Specialists &nbsp;·&nbsp; Tax Advisors &nbsp;·&nbsp; Surveyors &nbsp;·&nbsp; Letting Agents &nbsp;·&nbsp; Maintenance Firms &nbsp;·&nbsp; Rent Guarantee Providers &nbsp;·&nbsp; Accountants</span>
   </div>
 </section>
 
@@ -946,19 +953,20 @@
           <h2>Exclusive Partner</h2>
           <p>One slot per category &nbsp;·&nbsp; Limited availability</p>
           <div class="excl-pills">
-            <span class="excl-pill">Legal</span>
-            <span class="excl-pill">Financial Advisory</span>
+            <span class="excl-pill">Business Services</span>
+            <span class="excl-pill">Professional Services</span>
+            <span class="excl-pill">Finance &amp; Legal</span>
           </div>
         </div>
         <div class="excl-price">
-          <div class="excl-price-num">£5,000</div>
-          <div class="excl-price-label">per year</div>
+          <div class="excl-price-num">£450<span style="font-size:28px;font-weight:300"> /mo</span></div>
+          <div class="excl-price-label" style="color:var(--gold-lite); font-size:12px; font-family:'DM Sans',sans-serif; font-weight:300; margin-top:6px">or <strong style="font-weight:700">£4,500/year</strong> upfront — <strong style="font-weight:700; color:var(--gold)">save £900</strong></div>
         </div>
       </div>
 
       <div class="excl-body">
         <p class="excl-intro">
-          This is not advertising — it is an exclusive, trusted referral relationship with a community of 350+ verified landlords. When members need legal advice or financial guidance, your firm is the one we name. Become the LLA's only recommended partner in your category.
+          This is not advertising — it is an exclusive, trusted referral relationship with a community of 350+ verified landlords. Exclusive Partners are the only recommended provider in their category. Whether you offer legal, financial, tax, surveying, insurance or other professional services — when members need guidance, you are who we name.
         </p>
         <div class="excl-benefits-label">What's Included</div>
         <div class="excl-benefits">
@@ -1024,6 +1032,7 @@
           <div class="tier-name">Platinum</div>
           <div class="tier-price">£150</div>
           <div class="tier-period">per month</div>
+          <div class="tier-annual">or £1,500/yr &nbsp;·&nbsp; <span class="saving" style="color:var(--gold)">save £300</span></div>
         </div>
         <div class="tier-body">
           <div class="tier-benefit">
@@ -1047,7 +1056,7 @@
             <div class="tier-benefit-desc">Listed as a supplier in the monthly member newsletter</div>
           </div>
         </div>
-        <a href="mailto:info@thelandlordsalliance.com?subject=Platinum Sponsorship Enquiry" class="tier-cta">Enquire Now</a>
+        <a href="#" class="tier-cta" onclick="openModal('Platinum (£150/mo or £1,500/yr)');return false;">Enquire Now</a>
       </div>
 
       <!-- GOLD -->
@@ -1057,6 +1066,7 @@
           <div class="tier-name">Gold</div>
           <div class="tier-price" style="color:var(--gold)">£100</div>
           <div class="tier-period">per month</div>
+          <div class="tier-annual">or £1,000/yr &nbsp;·&nbsp; <span class="saving" style="color:var(--gold-lite)">save £200</span></div>
         </div>
         <div class="tier-body">
           <div class="tier-benefit">
@@ -1076,7 +1086,7 @@
             <div class="tier-benefit-desc">Listed as a supplier in the monthly member newsletter</div>
           </div>
         </div>
-        <a href="mailto:info@thelandlordsalliance.com?subject=Gold Sponsorship Enquiry" class="tier-cta">Enquire Now</a>
+        <a href="#" class="tier-cta" onclick="openModal('Gold (£100/mo or £1,000/yr)');return false;">Enquire Now</a>
       </div>
 
       <!-- SILVER -->
@@ -1086,6 +1096,7 @@
           <div class="tier-name">Silver</div>
           <div class="tier-price" style="color:#8FA3B1">£50</div>
           <div class="tier-period">per month</div>
+          <div class="tier-annual">or £500/yr &nbsp;·&nbsp; <span class="saving" style="color:#B8CDD8">save £100</span></div>
         </div>
         <div class="tier-body">
           <div class="tier-benefit">
@@ -1101,7 +1112,7 @@
             <div class="tier-benefit-desc">Listed as a supplier in the monthly member newsletter</div>
           </div>
         </div>
-        <a href="mailto:info@thelandlordsalliance.com?subject=Silver Sponsorship Enquiry" class="tier-cta">Enquire Now</a>
+        <a href="#" class="tier-cta" onclick="openModal('Silver (£50/mo or £500/yr)');return false;">Enquire Now</a>
       </div>
 
     </div>
@@ -1118,10 +1129,10 @@
       <thead>
         <tr>
           <th></th>
-          <th class="excl-col">Exclusive<br>£5,000/yr</th>
-          <th class="plat-col">Platinum<br>£150/mo</th>
-          <th class="gold-col">Gold<br>£100/mo</th>
-          <th class="silv-col">Silver<br>£50/mo</th>
+          <th class="excl-col">Exclusive<br>£450/mo · £4,500/yr</th>
+          <th class="plat-col">Platinum<br>£150/mo · £1,500/yr</th>
+          <th class="gold-col">Gold<br>£100/mo · £1,000/yr</th>
+          <th class="silv-col">Silver<br>£50/mo · £500/yr</th>
         </tr>
       </thead>
       <tbody>
@@ -1259,6 +1270,21 @@
           <td>Smaller landlords rely on brokers to navigate 200+ lenders. Yields at a 10-year high drive active refinancing — trusted referrals are invaluable.</td>
         </tr>
         <tr>
+          <td>Financial Advisors</td>
+          <td>£15bn+ market</td>
+          <td>Portfolio landlords need ongoing financial planning — pension strategy, portfolio restructuring, inheritance planning. A high-value, recurring advice relationship.</td>
+        </tr>
+        <tr>
+          <td>Tax Advisors</td>
+          <td>Growing rapidly</td>
+          <td>Stamp duty changes, Section 24 mortgage interest relief removal and the Renters' Rights Act are driving urgent demand for specialist landlord tax advice.</td>
+        </tr>
+        <tr>
+          <td>Surveyors</td>
+          <td>£6bn+ market</td>
+          <td>Landlords require condition reports, valuations, EPCs and structural surveys — often annually. Trusted community referrals drive consistent instruction volume.</td>
+        </tr>
+        <tr>
           <td>Letting &amp; Management</td>
           <td>£3–5bn/yr · 10–20% of rent</td>
           <td>1-5 property landlords rarely have in-house management. A community endorsement is one of the most powerful ways an agent wins new instructions.</td>
@@ -1275,26 +1301,481 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Ismaili Community & Cross-Alliance -->
+    <div class="sweet-spot reveal" style="margin-top: 40px;">
+      <h3>Beyond Landlords — The Wider Community Opportunity</h3>
+      <p>The Landlord Alliance currently represents <strong style="color:var(--gold)">350 active landlords</strong> across the UK. But our reach extends further.</p>
+      <p style="margin-top:14px;">Beyond our core landlord base, we offer access to the <strong style="color:var(--gold)">UK Ismaili community</strong> — a significant number of whom are homeowners, property investors, and frequent users of legal, tax, and financial advisory services. This represents a highly engaged, professional audience actively seeking trusted service providers.</p>
+      <p style="margin-top:14px;">We are also <strong style="color:var(--gold)">directly connected to other Alliances</strong>, giving sponsors potential access to commercial property owners and professionals across multiple high-value sectors — extending your reach well beyond the residential landlord market.</p>
+    </div>
   </div>
 </div>
 
+<!-- TERMS & CONDITIONS -->
+<div class="comparison-section full-width" id="terms" style="background:var(--cream);">
+  <div class="comparison-inner">
+    <div class="section-label">Commitment &amp; Terms</div>
+    <h2 class="section-title">Simple, <em>transparent</em> terms.</h2>
+    <p class="section-body" style="margin-bottom:48px;">We believe in straightforward partnerships. Here's everything you need to know before signing up.</p>
+
+    <div class="terms-grid reveal">
+
+      <div class="terms-card">
+        <div class="terms-icon">📅</div>
+        <h3>Minimum Commitment</h3>
+        <p>All packages require a <strong>minimum 6-month commitment</strong>. This gives both parties time to build a meaningful partnership and measure results properly.</p>
+        <p>Reviews are conducted <strong>quarterly</strong>, giving you regular checkpoints to assess performance and discuss any adjustments.</p>
+      </div>
+
+      <div class="terms-card">
+        <div class="terms-icon">🔔</div>
+        <h3>Notice Period</h3>
+        <p>To discontinue after your minimum term, we require <strong>30 days' written notice</strong> before your next billing date.</p>
+        <p>This applies to all monthly packages. Annual packages are non-cancellable mid-term but are not auto-renewed without your confirmation.</p>
+      </div>
+
+      <div class="terms-card">
+        <div class="terms-icon">✅</div>
+        <h3>14-Day Money-Back Guarantee</h3>
+        <p>All new sponsors benefit from a <strong>14-day cooling-off period</strong>. If you change your mind within 14 days of your first payment — even if benefits have already been activated — we'll refund you in full, no questions asked.</p>
+      </div>
+
+    </div>
+
+    <!-- Payment & Notice Table -->
+    <div style="margin-top:48px;">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--navy); margin-bottom:24px;">Payment, Notice &amp; Refund Policy</h3>
+      <table class="terms-table reveal">
+        <thead>
+          <tr>
+            <th>Payment Type</th>
+            <th>Notice Period</th>
+            <th>Early Exit</th>
+            <th>Refund Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Yearly (paid upfront)</strong><br><span style="font-size:11px;color:var(--mid)">Save up to £900 vs monthly</span></td>
+            <td>No notice required to stop at year end</td>
+            <td>Annual discount is forfeited if you cancel before year end</td>
+            <td>Pro-rated refund may be available at LLA's discretion — contact us to discuss</td>
+          </tr>
+          <tr>
+            <td><strong>Monthly (6-month contract)</strong><br><span style="font-size:11px;color:var(--mid)">Minimum 6 months</span></td>
+            <td>30 days before next billing date</td>
+            <td>Remaining contract balance may be due if exiting early</td>
+            <td>No refund for the current billing period once payment has processed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cooling-off-box reveal">
+      <span class="cooling-badge">14-Day Guarantee</span>
+      <p><strong>Cooling-off period:</strong> All new sign-ups receive a full 14-day money-back guarantee from the date of first payment. This applies even if your listing has gone live and benefits have been activated. Simply email <a href="mailto:info@thelandlordsalliance.com">info@thelandlordsalliance.com</a> within 14 days to request a refund.</p>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  /* Portal section */
+  .portal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(201,168,76,0.15);
+  }
+  .portal-card {
+    background: var(--navy-mid);
+    padding: 28px 24px;
+  }
+  .portal-tier {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    display: inline-block;
+    margin-bottom: 16px;
+    border-radius: 2px;
+  }
+  .portal-tier.excl { background: var(--gold); color: var(--navy); }
+  .portal-tier.plat { background: var(--navy-lite); color: var(--gold); border: 1px solid var(--gold); }
+  .portal-tier.gold { background: #3D2E06; color: var(--gold); }
+  .portal-tier.silv { background: #2A3740; color: #8FA3B1; }
+  .portal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .portal-list li {
+    font-size: 12px;
+    color: var(--offwhite);
+    font-weight: 300;
+    line-height: 1.5;
+    padding-left: 14px;
+    position: relative;
+  }
+  .portal-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 10px;
+  }
+
+  /* Terms section */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 0;
+  }
+  .terms-card {
+    background: var(--white);
+    border: 1px solid var(--gold-pale);
+    border-top: 3px solid var(--gold);
+    padding: 32px 28px;
+  }
+  .terms-icon { font-size: 28px; margin-bottom: 16px; }
+  .terms-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .terms-card p {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--mid);
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  .terms-card strong { color: var(--navy); font-weight: 600; }
+
+  /* Terms table */
+  .terms-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .terms-table th {
+    background: var(--navy);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    text-align: left;
+  }
+  .terms-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--gold-pale);
+    color: var(--mid);
+    font-weight: 300;
+    line-height: 1.6;
+    vertical-align: top;
+  }
+  .terms-table tr:nth-child(even) td { background: var(--gold-faint); }
+  .terms-table td strong { color: var(--navy); font-weight: 600; }
+
+  /* Cooling off box */
+  .cooling-off-box {
+    background: var(--navy);
+    border-left: 5px solid var(--gold);
+    padding: 28px 32px;
+    margin-top: 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .cooling-badge {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+  .cooling-off-box p {
+    font-size: 13px;
+    color: var(--offwhite);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .cooling-off-box strong { color: var(--gold); font-weight: 600; }
+  .cooling-off-box a { color: var(--gold-lite); }
+
+  @media (max-width: 900px) {
+    .terms-grid { grid-template-columns: 1fr; }
+    .cooling-off-box { flex-direction: column; gap: 16px; }
+  }
+</style>
 <!-- CTA -->
 <div class="cta-section full-width" id="contact">
   <h2>Ready to reach<br><em>350+ verified landlords?</em></h2>
   <p>Get in touch and we'll find the right package for your business. Exclusive Partner slots are limited to one per category.</p>
-  <a href="mailto:info@thelandlordsalliance.com?subject=Sponsorship Enquiry" class="cta-btn">Get in Touch</a>
+  <a href="mailto:info@thelandlordsalliance.com?subject=Sponsorship Enquiry" class="cta-btn" onclick="openModal('General');return false;">Get in Touch</a>
   <p class="cta-note">info@thelandlordsalliance.com &nbsp;·&nbsp; thelandlordsalliance.com</p>
+</div>
+
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="modal-overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <div class="modal-header">
+      <div class="modal-overline">The Landlords Alliance</div>
+      <h2 class="modal-title">Get in <em>Touch</em></h2>
+      <p class="modal-sub">We'll get back to you within one business day.</p>
+    </div>
+
+    <form class="modal-form" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" id="f-name" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-group">
+          <label>Company *</label>
+          <input type="text" id="f-company" placeholder="Smith & Co" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="f-email" placeholder="jane@smithco.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone (optional)</label>
+          <input type="tel" id="f-phone" placeholder="+44 7700 900000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Package Interest *</label>
+        <select id="f-package" required>
+          <option value="">Select a package...</option>
+          <option value="Exclusive Partner (£450/mo or £4,500/yr)">Exclusive Partner — £450/mo or £4,500/yr</option>
+          <option value="Platinum (£150/mo or £1,500/yr)">Platinum — £150/mo or £1,500/yr</option>
+          <option value="Gold (£100/mo or £1,000/yr)">Gold — £100/mo or £1,000/yr</option>
+          <option value="Silver (£50/mo or £500/yr)">Silver — £50/mo or £500/yr</option>
+          <option value="Not sure yet">Not sure yet — happy to discuss</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message (optional)</label>
+        <textarea id="f-message" rows="3" placeholder="Tell us a bit about your business and what you're looking for..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Enquiry</button>
+      <p class="form-note">By submitting you agree to be contacted by The Landlords Alliance regarding sponsorship opportunities.</p>
+    </form>
+
+    <div class="modal-success" id="modal-success">
+      <div class="success-icon">✦</div>
+      <h3>Enquiry Sent</h3>
+      <p>Thank you — we'll be in touch within one business day.</p>
+      <p class="success-email">info@thelandlordsalliance.com</p>
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">The Landlords <span>Alliance</span></div>
-  <p>* Annual payment option available — save 2 months &nbsp;·&nbsp; One Exclusive slot per category &nbsp;·&nbsp; All packages subject to availability</p>
+  <p>Minimum 6-month commitment &nbsp;·&nbsp; 14-day money-back guarantee &nbsp;·&nbsp; One Exclusive slot per category &nbsp;·&nbsp; Annual plans paid upfront</p>
   <p><a href="mailto:info@thelandlordsalliance.com">info@thelandlordsalliance.com</a></p>
 </footer>
 
+<style>
+  /* ── MODAL ───────────────────────────────────────────────────── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 17, 31, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open {
+    display: flex;
+    animation: fadeIn 0.25s ease;
+  }
+  .modal-box {
+    background: var(--white);
+    max-width: 560px;
+    width: 100%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: fadeUp 0.3s ease;
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: var(--light);
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: var(--navy); }
+
+  .modal-header {
+    background: var(--navy);
+    padding: 36px 40px 28px;
+    border-top: 3px solid var(--gold);
+  }
+  .modal-overline {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .modal-title {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .modal-title em { color: var(--gold); font-style: italic; }
+  .modal-sub {
+    font-size: 13px;
+    color: var(--light);
+    font-weight: 300;
+  }
+
+  .modal-form {
+    padding: 32px 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--charcoal);
+    background: var(--cream);
+    border: 1px solid var(--offwhite);
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-group select { cursor: pointer; }
+
+  .form-submit {
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 4px;
+  }
+  .form-submit:hover { background: var(--navy-lite); }
+
+  .form-note {
+    font-size: 11px;
+    color: var(--light);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Success state */
+  .modal-success {
+    display: none;
+    padding: 56px 40px;
+    text-align: center;
+  }
+  .modal-success.show { display: block; }
+  .modal-form.hide { display: none; }
+
+  .success-icon {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .modal-success h3 {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .modal-success p {
+    font-size: 14px;
+    color: var(--mid);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .success-email {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--gold) !important;
+    font-weight: 500 !important;
+  }
+
+  @media (max-width: 600px) {
+    .modal-header, .modal-form { padding-left: 24px; padding-right: 24px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+
 <script>
-  // Scroll reveal
+  // ── SCROLL REVEAL ──────────────────────────────────────────────
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -1305,6 +1786,70 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
+
+  // ── MODAL ──────────────────────────────────────────────────────
+  function openModal(packageName) {
+    const modal = document.getElementById('contact-modal');
+    const select = document.getElementById('f-package');
+
+    // Reset form state
+    document.querySelector('.modal-form').classList.remove('hide');
+    document.getElementById('modal-success').classList.remove('show');
+    document.getElementById('contact-modal').querySelector('form').reset();
+
+    // Pre-select package if specified
+    if (packageName && packageName !== 'General') {
+      for (let opt of select.options) {
+        if (opt.value === packageName) {
+          opt.selected = true;
+          break;
+        }
+      }
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('contact-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ── FORM SUBMIT ────────────────────────────────────────────────
+  function submitForm(e) {
+    e.preventDefault();
+
+    const name    = document.getElementById('f-name').value;
+    const company = document.getElementById('f-company').value;
+    const email   = document.getElementById('f-email').value;
+    const phone   = document.getElementById('f-phone').value;
+    const pkg     = document.getElementById('f-package').value;
+    const message = document.getElementById('f-message').value;
+
+    // Build mailto string with all fields
+    const subject = encodeURIComponent(`LLA Sponsorship Enquiry — ${pkg}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Company: ${company}\n` +
+      `Email: ${email}\n` +
+      `Phone: ${phone || 'Not provided'}\n` +
+      `Package Interest: ${pkg}\n\n` +
+      `Message:\n${message || 'No message provided'}`
+    );
+
+    // Open mailto as fallback (sends full details)
+    window.location.href = `mailto:info@thelandlordsalliance.com?subject=${subject}&body=${body}`;
+
+    // Show success state
+    document.querySelector('.modal-form').classList.add('hide');
+    document.getElementById('modal-success').classList.add('show');
+  }
 </script>
 
 </body>
