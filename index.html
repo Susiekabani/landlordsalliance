@@ -94,14 +94,46 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: var(--gold);
-    color: var(--navy) !important;
-    padding: 8px 20px;
-    border-radius: 2px;
-    font-weight: 600 !important;
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
   }
-  .nav-cta:hover { background: var(--gold-lite) !important; color: var(--navy) !important; }
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--gold);
+    transition: all 0.25s;
+  }
+  @media (max-width: 900px) {
+    .nav-burger { display: flex; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px; left: 0; right: 0;
+      background: rgba(13,31,60,0.98);
+      flex-direction: column;
+      gap: 0;
+      padding: 12px 0 20px;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      padding: 14px 24px;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .nav-links .nav-cta {
+      margin: 12px 24px 0;
+      text-align: center;
+      padding: 12px;
+    }
+  }
 
   /* ── HERO ─────────────────────────────────────────────────────── */
   .hero {
@@ -863,22 +895,111 @@
   footer a:hover { text-decoration: underline; }
 
   /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  /* ── MOBILE — 900px and below ────────────────────────────────── */
   @media (max-width: 900px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
-    section { padding: 60px 20px; }
-    .intro-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-stats { flex-direction: column; }
+
+    /* Hero */
+    .hero { padding: 100px 24px 70px; }
+    .hero h1 { font-size: 48px; }
+    .hero-sub { font-size: 15px; }
+    .hero-stats { flex-direction: column; width: 100%; }
+    .hero-stat { padding: 20px 40px; width: 100%; }
     .hero-stat + .hero-stat::before { display: none; }
-    .packages-grid { grid-template-columns: 1fr; }
-    .excl-header { flex-direction: column; align-items: flex-start; }
+    .hero-stat.highlight { padding: 24px 40px; }
+
+    /* Sections */
+    section { padding: 56px 20px; }
+    .section-title { font-size: 36px; }
+
+    /* Intro */
+    .intro-grid { grid-template-columns: 1fr; gap: 32px; }
+    .ideal-strip { flex-direction: column; gap: 10px; padding: 20px; }
+    .ideal-strip-rule { display: none; }
+    .ideal-strip-items { font-size: 12px; line-height: 1.8; }
+
+    /* Exclusive card */
+    .excl-inner { padding: 48px 20px; }
+    .excl-header { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px 20px; }
     .excl-price { text-align: left; }
+    .excl-price-num { font-size: 40px; }
+    .excl-body { padding: 24px 20px; }
+    .excl-intro { font-size: 14px; }
     .excl-benefits { grid-template-columns: 1fr; }
+    .excl-benefit { padding: 14px 0; }
     .excl-benefit:nth-child(even) { padding-left: 0; border-left: none; }
+
+    /* Packages */
+    .packages-inner { padding: 48px 20px; }
+    .packages-grid { grid-template-columns: 1fr; gap: 2px; }
+
+    /* Comparison table — hide on mobile, show summary instead */
+    .comparison-section { padding: 56px 20px; }
+    .comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .comparison-table { font-size: 11px; min-width: 500px; }
+    .comparison-table td, .comparison-table th { padding: 10px 10px; }
+
+    /* Market */
+    .market-inner { padding: 48px 20px; }
     .market-stats-grid { grid-template-columns: 1fr 1fr; }
-    .comparison-section { padding: 60px 20px; }
-    .comparison-table { font-size: 11px; }
-    .comparison-table td, .comparison-table th { padding: 10px 12px; }
+    .market-stat { padding: 24px 16px; }
+    .market-stat-num { font-size: 32px; }
+    .sweet-spot { padding: 20px; }
+    .spend-table { font-size: 12px; }
+    .spend-table th, .spend-table td { padding: 12px 10px; }
+
+    /* Terms */
+    .terms-grid { grid-template-columns: 1fr; }
+    .terms-table { font-size: 11px; }
+    .terms-table th, .terms-table td { padding: 12px 10px; }
+    .cooling-off-box { flex-direction: column; gap: 16px; padding: 20px; }
+  }
+
+  /* ── SMALL MOBILE — 480px (iPhone portrait) ──────────────────── */
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 38px; }
+    .hero-sub { font-size: 14px; }
+    .hero-stat { padding: 18px 24px; }
+    .excl-header h2 { font-size: 26px; }
+    .excl-price-num { font-size: 34px; }
+    .excl-pills { flex-wrap: wrap; gap: 6px; }
+
+    /* Stack market stats to single column */
+    .market-stats-grid { grid-template-columns: 1fr 1fr; }
+    .market-stat-num { font-size: 28px; }
+    .market-stat-label { font-size: 10px; }
+
+    /* Comparison table — scrollable horizontally */
+    .comparison-table { min-width: 460px; font-size: 10px; }
+    .comparison-table td, .comparison-table th { padding: 8px 8px; }
+
+    /* Spend table — hide third column on very small screens */
+    .spend-table td:last-child,
+    .spend-table th:last-child { display: none; }
+
+    /* Terms table — stack differently */
+    .terms-table thead { display: none; }
+    .terms-table tr { display: block; margin-bottom: 16px; border: 1px solid var(--gold-pale); }
+    .terms-table td {
+      display: block;
+      text-align: left;
+      border-bottom: 1px solid var(--gold-faint);
+      padding: 10px 14px;
+    }
+    .terms-table td:first-child {
+      background: var(--navy);
+      color: var(--gold) !important;
+    }
+
+    /* Modal */
+    .modal-header { padding: 28px 20px 20px; }
+    .modal-form { padding: 24px 20px 28px; }
+    .modal-success { padding: 40px 20px; }
+
+    /* CTA */
+    .cta-section { padding: 60px 20px; }
+    .cta-btn { padding: 16px 32px; font-size: 11px; }
   }
 </style>
 </head>
@@ -887,13 +1008,16 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">The Landlords <span>Alliance</span></div>
-  <ul class="nav-links">
-    <li><a href="#packages">Packages</a></li>
-    <li><a href="#comparison">Compare</a></li>
-    <li><a href="#market">The Market</a></li>
-    <li><a href="#terms">Terms</a></li>
-    <li><a href="#" class="nav-cta" onclick="openModal('General');return false;">Get in Touch</a></li>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#packages" onclick="closeNav()">Packages</a></li>
+    <li><a href="#comparison" onclick="closeNav()">Compare</a></li>
+    <li><a href="#market" onclick="closeNav()">The Market</a></li>
+    <li><a href="#terms" onclick="closeNav()">Terms</a></li>
+    <li><a href="#" class="nav-cta" onclick="closeNav();openModal('General');return false;">Get in Touch</a></li>
   </ul>
+  <button class="nav-burger" id="nav-burger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1125,6 +1249,7 @@
     <div class="section-label">Full Comparison</div>
     <h2 class="section-title">Everything <em>side by side.</em></h2>
 
+    <div class="comparison-table-wrap">
     <table class="comparison-table reveal">
       <thead>
         <tr>
@@ -1215,6 +1340,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </div>
 
@@ -1775,6 +1901,14 @@
 </style>
 
 <script>
+  // ── NAV HAMBURGER ──────────────────────────────────────────────
+  function toggleNav() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('nav-links').classList.remove('open');
+  }
+
   // ── SCROLL REVEAL ──────────────────────────────────────────────
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
